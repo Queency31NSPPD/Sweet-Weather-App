@@ -1,13 +1,7 @@
 body{
     font-family: arial, sans-serif;
 }
-.strawberry-weather{
-    max-width:600px;
-    margin: 30px auto;
-    padding: 20px;
-    border: 1px solid #dadde1;
-    border-radius: 10px;
-}
+
 h1{
     color: rgb(135, 135, 135);
     font-size: 24px;
@@ -27,4 +21,33 @@ li{
     font-size: 16px;
     font-weight: 100;
     line-height: 19px;
+}
+.strawberry-weather-shield{
+max-width: 600px;
+    margin: 30px auto;
+}
+.strawberry-weather {
+    
+    padding: 20px;
+    border: 1px solid #dadde1;
+    border-radius: 10px;
+}
+.headview{
+    margin-bottom: 20px;
+}
+.weather-temperature img{
+margin-right: 5px;
+height: 64px;
+width:64px;
+}
+.weather-temperature strong{
+    color:rgb(33, 33, 33);
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: 400;
+}
+.weather-temperature .unit{
+position: relative;
+font-size: 16px;
+top: -34px;
 }

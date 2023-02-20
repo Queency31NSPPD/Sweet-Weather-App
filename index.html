@@ -15,26 +15,36 @@
   </head>
   <body>
     <div class="container">
-      <div class="strawberry-weather">
-        <h1>Nigeria</h1>
-        <ul>
-          <li>Monday 18:42</li>
-          <li>Haze</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/fog.png"
-              alt="Haze"
-            />
-            33°C | °F
-          </div>
-          <div class="col-6">
+      <div class="strawberry-weather-shield">
+        <div class="strawberry-weather">
+          <div class="headview">
+            <h1>Nigeria</h1>
             <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 17%</li>
-              <li>Wind: 2km/h</li>
+              <li>Monday 18:42</li>
+              <li>Haze</li>
             </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/fog.png"
+                  alt="Haze"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong>33</strong>
+                  <span class="unit">°C | <a href="#">°F</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Precipitation: 0%</li>
+                <li>Humidity: 17%</li>
+                <li>Wind: 2km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
 
