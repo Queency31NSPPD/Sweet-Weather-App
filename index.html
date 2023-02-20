@@ -4,46 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="src/styles.css" />
     <title>Sweet-Weather-App</title>
   </head>
   <body>
-    <div class="container"></div>
-    <h1>Nigeria</h1>
-    <ul>
-      <li>Monday 18:42</li>
-      <li>Haze</li>
-    </ul>
-    <div class="row">
-      <div class="col-6">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/fog.png"
-alt="Haze" />
-33°C | °F
-    </div>
-    <div class="col-6">
+    <div class="container">
+      <div class="strawberry-weather">
+        <h1>Nigeria</h1>
         <ul>
-            <li>
-                Precipitation: 0%
-            </li>
-             <li>
-                Humidity: 17%
-            </li>
-             <li>
-                Wind: 2km/h
-            </li>
+          <li>Monday 18:42</li>
+          <li>Haze</li>
         </ul>
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/fog.png"
+              alt="Haze"
+            />
+            33°C | °F
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Precipitation: 0%</li>
+              <li>Humidity: 17%</li>
+              <li>Wind: 2km/h</li>
+            </ul>
+          </div>
+        </div>
+
+        <small>
+          <a
+            href="https://github.com/Queency31NSPPD/Sweet-Weather-App"
+            target="_blank"
+          >
+            Open-source code</a
+          >
+          by Bridget Nnenna
+        </small>
+      </div>
     </div>
-    </div>
-    <small>
-        <a href="">Open-source code</a> by Bridget Nnenna
-    </small>
-</div>
     <script src="src/app.js"></script>
   </body>
 </html>
