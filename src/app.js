@@ -1,6 +1,21 @@
+function dateFormat(timetape){
+    let date = new Date(timetape);
+    let hours = date.getHours();
+     if (hours < 10){
+        hours = `0${hours}`;
+     }
+    let minutes = date.getMinutes();
+    if (minutes < 10){
+        minutes = `0${minutes}`;
+    }
+    let days =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
+return `${day} ${hours}:${minutes}`;
+}
+
 function showTemperature(response){
     console.log(response)
-
+    
     let  temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
 
@@ -15,6 +30,9 @@ function showTemperature(response){
 
       let weatherDiscription   = document.querySelector("#weather-condition");
     weatherDiscription.innerHTML = response.data.condition.description;
+
+    let dateElement = document.querySelector("#date");
+    dateElement.innerHTML = dateFormat(response.data.time * 1000);
 }
 
 let apiKey = "0b8bet4102f106df6eef01d97o5b3bab";
