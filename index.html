@@ -10,6 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Sweet-Weather-App</title>
   </head>
@@ -18,31 +19,30 @@
       <div class="strawberry-weather-shield">
         <div class="strawberry-weather">
           <div class="headview">
-            <h1>Nigeria</h1>
+            <h1 id="city"></h1>
             <ul>
               <li>Monday 18:42</li>
-              <li>Haze</li>
+              <li id="weather-condition"></li>
             </ul>
           </div>
           <div class="row">
             <div class="col-6">
-              <div class="clearfix weather-temperature">
+              <div class="d-flex weather-temperature">
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/fog.png"
                   alt="Haze"
                   class="float-left"
                 />
                 <div class="float-left">
-                  <strong>33</strong>
+                  <strong id="temperature"></strong>
                   <span class="unit">°C | <a href="#">°F</a></span>
                 </div>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: 0%</li>
-                <li>Humidity: 17%</li>
-                <li>Wind: 2km/h</li>
+                <li>Humidity:<span id="humidity"></span>%</li>
+                <li>Wind:<span id="wind"></span> Km/H</li>
               </ul>
             </div>
           </div>
