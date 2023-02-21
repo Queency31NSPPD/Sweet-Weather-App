@@ -4,18 +4,25 @@ function dateFormat(timetape){
      if (hours < 10){
         hours = `0${hours}`;
      }
+     let year = date.getFullYear();
+
+     let dayOfMonth = date.getDate();
+     
+     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+let month = months[date.getMonth()];
+
     let minutes = date.getMinutes();
     if (minutes < 10){
         minutes = `0${minutes}`;
     }
-    let days =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let days =["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
     let day = days[date.getDay()];
-return `${day} ${hours}:${minutes}`;
+return ` ${day}, ${dayOfMonth} ${month} ${year}, time: ${hours}:${minutes}`;
 }
 
 function showTemperature(response){
     console.log(response)
-    
+
     let  temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
 
@@ -33,6 +40,9 @@ function showTemperature(response){
 
     let dateElement = document.querySelector("#date");
     dateElement.innerHTML = dateFormat(response.data.time * 1000);
+
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png`);
 }
 
 let apiKey = "0b8bet4102f106df6eef01d97o5b3bab";
