@@ -21,10 +21,8 @@ return ` ${day}, ${dayOfMonth} ${month} ${year}, time: ${hours}:${minutes}`;
 }
 
 function showTemperature(response){
-    console.log(response)
-
     let  temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+    temperatureElement.innerHTML = Math.round(celsiusDegree);
 
      let  cityLocation = document.querySelector("#city");
     cityLocation.innerHTML = response.data.city;
@@ -46,9 +44,48 @@ function showTemperature(response){
 
     iconElement.setAttribute(
         "alt", response.data.condition.description);
+
+        celsiusDegree = response.data.temperature.current;
 }
 
+function search(city) {
 let apiKey = "0b8bet4102f106df6eef01d97o5b3bab";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Abakaliki&key=${apiKey}&units=metric`;
-
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
+
+function showFahrenheitDegree(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheitDegree = (celsiusDegree * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheitDegree);
+}
+
+function showCelsiusDegree(event){
+    event.preventDefault();
+     celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+     let temperatureElement = document.querySelector("#temperature");
+     temperatureElement.innerHTML = Math.round(celsiusDegree);
+}
+
+let celsiusDegree = null;
+
+let form = document.querySelector("#google-form");
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitDegree);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusDegree);
+
+search("Abakaliki");

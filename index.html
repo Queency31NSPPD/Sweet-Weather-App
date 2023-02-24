@@ -18,6 +18,27 @@
     <div class="container">
       <div class="strawberry-weather-shield">
         <div class="strawberry-weather">
+          <form id="google-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city name..."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary"
+                  w-100
+                />
+              </div>
+            </div>
+          </form>
           <div class="headview">
             <h1 id="city"></h1>
             <ul>
@@ -31,7 +52,10 @@
                 <img src="" alt="" id="icon" class="float-left" />
                 <div class="float-left">
                   <strong id="temperature"></strong>
-                  <span class="unit">°C | <a href="#">°F</a></span>
+                  <span class="unit"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
                 </div>
               </div>
             </div>
