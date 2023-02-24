@@ -24,6 +24,8 @@ function showTemperature(response){
     let  temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusDegree);
 
+celsiusDegree = response.data.temperature.current;
+
      let  cityLocation = document.querySelector("#city");
     cityLocation.innerHTML = response.data.city;
 
@@ -44,8 +46,6 @@ function showTemperature(response){
 
     iconElement.setAttribute(
         "alt", response.data.condition.description);
-
-        celsiusDegree = response.data.temperature.current;
 }
 
 function search(city) {
