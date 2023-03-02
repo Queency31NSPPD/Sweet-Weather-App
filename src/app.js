@@ -20,6 +20,33 @@ let month = months[date.getMonth()];
 return ` ${day}, ${dayOfMonth} ${month} ${year}, time: ${hours}:${minutes}`;
 }
 
+function showForecast (){
+    let forecastElement = document.querySelector("#forecast");
+
+let days = ["Thur", "Fri", "Sat", "Sun", "Mon", "Tue", "Wen"];
+let forecastHTML = `<div class="row">`;
+days.forEach(function (day){
+forecastHTML = forecastHTML + `<div class="col-sm">
+                <div class="weather-forecast-date">${day}</div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                  alt=""
+                  width="50"
+                />
+                <div class="weather-forecast-temperature">
+                  <span class="weather-forecast-temperature-max"> 18°C </span>
+                  <span class="weather-forecast-temperature-min"> 12°F </span>
+              </div>
+            </div>`;
+});
+
+
+            forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+ 
+}
+
+
 function showTemperature(response){
     let  temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusDegree);
@@ -79,6 +106,7 @@ function showCelsiusDegree(event){
 
 let celsiusDegree = null;
 
+
 let form = document.querySelector("#google-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -89,3 +117,6 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusDegree);
 
 search("Abakaliki");
+
+
+showForecast();
