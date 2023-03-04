@@ -41,13 +41,18 @@ forecastHTML = forecastHTML + `<div class="col-sm">
 });
 
 
-            forecastHTML = forecastHTML + `</div>`;
+forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
  
 }
 
+function getForecast(coordinates){
+    let apiKey = `0b8bet4102f106df6eef01d97o5b3bab`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates}&lat=${coordinates}&key=${apiKey}&units=metric`;
+}
 
 function showTemperature(response){
+    console.log(response.data)
     let  temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusDegree);
 
@@ -73,6 +78,9 @@ celsiusDegree = response.data.temperature.current;
 
     iconElement.setAttribute(
         "alt", response.data.condition.description);
+
+ getForecast(response.data.coordinates);
+        
 }
 
 function search(city) {
