@@ -20,7 +20,8 @@ let month = months[date.getMonth()];
 return ` ${day}, ${dayOfMonth} ${month} ${year}, time: ${hours}:${minutes}`;
 }
 
-function showForecast (){
+function showForecast (response){
+    console.log(response.data);
     let forecastElement = document.querySelector("#forecast");
 
 let days = ["Thur", "Fri", "Sat", "Sun", "Mon", "Tue", "Wen"];
@@ -48,7 +49,9 @@ forecastElement.innerHTML = forecastHTML;
 
 function getForecast(coordinates){
     let apiKey = `0b8bet4102f106df6eef01d97o5b3bab`;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates}&lat=${coordinates}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=Abakaliki&key=${apiKey}&units=metric`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(showForecast);
 }
 
 function showTemperature(response){
@@ -127,4 +130,3 @@ celsiusLink.addEventListener("click", showCelsiusDegree);
 search("Abakaliki");
 
 
-showForecast();
