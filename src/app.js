@@ -43,8 +43,8 @@ forecastHTML = forecastHTML + `<div class="col-sm">
                   width="50"
                 />
                 <div class="weather-forecast-temperature">
-                  <span class="weather-forecast-temperature-max"> ${Math.round(forecastDay.temperature.maximum)}°C </span>
-                  <span class="weather-forecast-temperature-min"> ${Math.round(forecastDay.temperature.minimum)}°F </span>
+                  <span class="weather-forecast-temperature-max"> ${Math.round(forecastDay.temperature.maximum)}° </span>
+                  <span class="weather-forecast-temperature-min"> ${Math.round(forecastDay.temperature.minimum)}° </span>
               </div>
             </div>`;
 });
@@ -56,14 +56,14 @@ forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates){
-    console.log(coordinates);
+   
     let apiKey = `0b8bet4102f106df6eef01d97o5b3bab`;
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showForecast);
 }
 
 function showTemperature(response){
-    console.log(response.data)
+    
     let  temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusDegree);
 
