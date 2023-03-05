@@ -56,9 +56,9 @@ forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates){
+    console.log(coordinates);
     let apiKey = `0b8bet4102f106df6eef01d97o5b3bab`;
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=Abakaliki&key=${apiKey}&units=metric`;
-    console.log(apiUrl);
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(showForecast);
 }
 
