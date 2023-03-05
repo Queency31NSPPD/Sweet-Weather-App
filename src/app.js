@@ -20,23 +20,31 @@ let month = months[date.getMonth()];
 return ` ${day}, ${dayOfMonth} ${month} ${year}, time: ${hours}:${minutes}`;
 }
 
+function forecastWeekDays(timetape){
+    let date = new Date(timetape * 1000);
+    let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wen", "Thur", "Fri", "Sat"];
+
+    return days[day];
+
+}
+
 function showForecast (response){
-    console.log(response.data);
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
 
-let days = ["Thur", "Fri", "Sat", "Sun", "Mon", "Tue", "Wen"];
 let forecastHTML = `<div class="row">`;
-days.forEach(function (day){
+forecast.forEach(function (forecastDay){
 forecastHTML = forecastHTML + `<div class="col-sm">
-                <div class="weather-forecast-date">${day}</div>
+                <div class="weather-forecast-date">${forecastWeekDays(forecastDay.time)}</div>
                 <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
                   alt=""
                   width="50"
                 />
                 <div class="weather-forecast-temperature">
-                  <span class="weather-forecast-temperature-max"> 18°C </span>
-                  <span class="weather-forecast-temperature-min"> 12°F </span>
+                  <span class="weather-forecast-temperature-max"> ${Math.round(forecastDay.temperature.maximum)}°C </span>
+                  <span class="weather-forecast-temperature-min"> ${Math.round(forecastDay.temperature.minimum)}°F </span>
               </div>
             </div>`;
 });
