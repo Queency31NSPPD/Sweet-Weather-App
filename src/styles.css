@@ -81,3 +81,10 @@ top: -34px;
 .weather-forecast-temperature{
     font-size: 13px;
 }
+@media (max-width: 1000px) {
+    .container {
+        width: fit-content;
+        
+    }
+ 
+}
