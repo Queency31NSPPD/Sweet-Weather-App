@@ -25,7 +25,7 @@ li{
     padding: 0;
     
     font-size: 16px;
-    font-weight: 100;
+font-weight: bolder;
     line-height: 19px;
 }
 li::first-letter{
@@ -38,7 +38,7 @@ max-width: 600px;
 .strawberry-weather {
     
     padding: 20px;
-    border: 1px solid #dadde1;
+    border: 1px solid #000306;
     border-radius: 10px;
 }
 .headview{
@@ -53,16 +53,18 @@ width:64px;
     color:rgb(33, 33, 33);
     font-size: 64px;
     line-height: 64px;
-    font-weight: 400;
+    font-weight: bolder;
 }
 .weather-temperature .unit{
 position: relative;
 font-size: 16px;
+font-weight: bolder;
 top: -34px;
 }
 .weather-temperature .active{
     color:rgb(33, 33, 33);
     cursor: default;
+    font-weight: bolder;
 }
 .weather-temperature .active:hover {
     text-decoration: none;
@@ -70,16 +72,20 @@ top: -34px;
 .weather-forecast{
     margin-top: 20px;
     text-align: center;
+    font-weight: bolder;
 }
 .weather-forecast-date{
     font-size: 16px;
     opacity: 0.6;
+    font-weight: bolder;
 }
 .weather-forecast-temperature-min {
     opacity: 0.6;
+    font-weight: bolder;
 }
 .weather-forecast-temperature{
     font-size: 13px;
+    font-weight: bolder;
 }
 @media (max-width: 900px) {
     h1{
